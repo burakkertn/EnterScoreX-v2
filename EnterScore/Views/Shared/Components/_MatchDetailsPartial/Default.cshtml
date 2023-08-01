@@ -1,0 +1,222 @@
+﻿@model EntityLayer.Concrete.Match
+
+<div class="world-cup-match-stastic-section">
+    <div class="container">
+        <div class="row">
+            <div class="world-cup-match-stastic-inner">
+                <div class="col-md-12">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#match-statistics" aria-controls="match-statistics" role="tab" data-toggle="tab">Maç İstatistikleri</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                    <div class="world-match-left">
+                        <div class="world-team-img">
+                            <a href="#"><img src="@Model.HomeTeam.SignedUrl" width="65" height="63" alt=""></a>
+                        </div>
+                        <div class="world-team-name">
+                            <h1>@Model.HomeTeam.Name</h1>
+                            <p>@Model.HomeTeam.Coach.Name</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                    <div class="world-match-right">
+                        <div class="world-team-name text-right">
+                            <h1>@Model.AwayTeam.Name</h1>
+                            <p>@Model.AwayTeam.Coach.Name</p>
+                        </div>
+                        <div class="world-team-img world-team-img-right">
+                            <a href="#"><img src="@Model.AwayTeam.SignedUrl" width="65" height="63" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="match-statistics">
+                        <div class="result-tab-area">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-4 col-xs-2">
+                                        <div class="statstics">
+                                            <p>@Model.HomeTeamShots</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-8">
+                                        <div class="statstics statstics-center text-center">
+                                            <p>Şut</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-2">
+                                        <div class="statstics statstics-right text-right">
+                                            <p class="statstics-color">@Model.AwayTeamShots</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row color-row">
+                                    <div class="col-md-4 col-xs-2">
+                                        <div class="statstics">
+                                            <p>@Model.HomeTeamShotsOnTarget</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-8">
+                                        <div class="statstics statstics-center text-center">
+                                            <p>Kaleyi Bulan Şutlar</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-2">
+                                        <div class="statstics statstics-right text-right">
+                                            <p class="statstics-color">@Model.AwayTeamShotsOnTarget</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-xs-2">
+                                        <div class="statstics">
+                                            <p>@Model.HomeTeamPassSuccess%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-8">
+                                        <div class="statstics statstics-center text-center">
+                                            <p>Pas Yüzdesi</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-2">
+                                        <div class="statstics statstics-right text-right">
+                                            <p class="statstics-color">@Model.AwayTeamPassSuccess%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row color-row">
+                                    <div class="col-md-4 col-xs-2">
+                                        <div class="statstics">
+                                            <p class="statstics-color">@Model.HomeTeamAirealDualSuccess%</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-8">
+                                        <div class="statstics statstics-center text-center">
+                                            <p>Başarılı Pas Yüzdesi</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-2">
+                                        <div class="statstics statstics-right text-right">
+                                            <p>@Model.AwayTeamAirealDualSuccess%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row color-row">
+                                    <div class="col-md-4 col-xs-2">
+                                        <div class="statstics">
+                                            <p class="statstics-color">@Model.HomeTeamFoulCount</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-8">
+                                        <div class="statstics statstics-center text-center">
+                                            <p>Müdahaleler</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-2">
+                                        <div class="statstics statstics-right text-right">
+                                            <p>@Model.AwayTeamFoulCount</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row statstics-total-row statstics-total-row-last">
+                                    <div class="col-md-12">
+                                        <div class="statstics statstics-total">
+                                            <p>TOPLAM</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-padding-zero">
+                                    <div class="col-md-12">
+                                        <div class="player-states player-result-states">
+                                            <div class="main-progressbar main-progressbar-result skillst1">
+                                                <div class="skillbar-items">
+                                                    <div class="skillbar progress result-progressbar" data-percent="@(Model.HomeTeamShots * 10)%">
+                                                        <div class="count-bar right progress-bar progress-bar-striped"></div>
+                                                    </div>
+                                                    <span class="progress-percent progress-percent-result">@Model.HomeTeamShots</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="sports-number">
+                                                <p>Şutlar</p>
+                                            </div>
+                                            <div class="main-progressbar main-progressbar-result skillst1">
+                                                <span class="progress-percent-left progress-percent-result float-left statstics-color">@Model.AwayTeamShots</span>
+                                                <div class="progress result-progressbar">
+                                                    <div class="skillbar progress result-progressbar" data-percent="@(Model.AwayTeamShots * 10)%">
+                                                        <div class="count-bar progress-bar progress-bar-striped"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-padding-zero">
+                                    <div class="col-md-12">
+                                        <div class="player-states player-result-states">
+                                            <div class="main-progressbar main-progressbar-result skillst1">
+                                                <div class="skillbar-items">
+                                                    <div class="skillbar progress result-progressbar" data-percent="@(Model.HomeTeamGoals * 10)%">
+                                                        <div class="count-bar right progress-bar progress-bar-striped"></div>
+                                                    </div>
+                                                    <span class="progress-percent progress-percent-result">@Model.HomeTeamGoals</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="sports-number">
+                                                <p>Goller</p>
+                                            </div>
+                                            <div class="main-progressbar main-progressbar-result skillst1">
+                                                <span class="progress-percent-left progress-percent-result float-left statstics-color">@Model.AwayTeamShots</span>
+                                                <div class="progress result-progressbar">
+                                                    <div class="skillbar progress result-progressbar" data-percent="@(Model.AwayTeamGoals * 10)%">
+                                                        <div class="count-bar progress-bar progress-bar-striped"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-padding-zero">
+                                    <div class="col-md-12">
+                                        <div class="player-states player-result-states">
+                                            <div class="main-progressbar main-progressbar-result skillst1">
+                                                <div class="skillbar-items">
+                                                    <div class="skillbar progress result-progressbar" data-percent="@(Model.HomeTeamShotsOnTarget * 10)%">
+                                                        <div class="count-bar right progress-bar progress-bar-striped"></div>
+                                                    </div>
+                                                    <span class="progress-percent progress-percent-result">@Model.HomeTeamShotsOnTarget</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="sports-number">
+                                                <p>Kaleyi Bulan Şutlar</p>
+                                            </div>
+                                            <div class="main-progressbar main-progressbar-result skillst1">
+                                                <span class="progress-percent-left progress-percent-result float-left">@Model.AwayTeamShotsOnTarget</span>
+                                                <div class="progress result-progressbar">
+                                                    <div class="skillbar progress result-progressbar" data-percent="@(Model.AwayTeamShotsOnTarget * 10)%">
+                                                        <div class="count-bar progress-bar progress-bar-striped"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Referee>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Photo)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @if (!String.IsNullOrWhiteSpace(item.SignedUrl))
+                        {
+                            <img width="75px" src="@item.SignedUrl" class="figure-img img-fluid rounded" alt="@item.SavedFileName">
+                        }
+                        else
+                        {
+                            <span>No Photo Available</span>
+                        }
+                    </td>
+                    <td>
+                        <a href="/Admin/Referee/UpdateReferee/@item.RefereeID">Edit</a> |
+                        <a href="/Admin/Referee/DeleteReferee/@item.RefereeID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Admin/Referee/AddReferee">Create New</a>
+</div>

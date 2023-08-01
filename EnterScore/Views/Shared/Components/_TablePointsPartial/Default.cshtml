@@ -1,0 +1,55 @@
+﻿@model IEnumerable<EntityLayer.Concrete.TeamStatistic>
+
+<div class="point-table-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="point-table-area">
+                    <div class="point-title-area">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th width="20%" scope="row">Premier Lig</th>
+                                    <th width="10%" class="text-center">Oynanan</th>
+                                    <th width="10%" class="text-center">Galibiyet</th>
+                                    <th width="10%" class="text-center">Beraberlik</th>
+                                    <th width="10%" class="text-center">Mağlubiyet</th>
+                                    <th width="10%" class="text-center">Atılan</th>
+                                    <th width="10%" class="text-center">Yenen</th>
+                                    <th width="10%" class="text-center">Averaj</th>
+                                    <th width="10%" class="text-center">Puan</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="point-items">
+                        <table class="table table-striped-inverse point-table">
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    @*    var team = item.Team.where(s => s.TeamID;*@
+                                    <tr>
+                                        <th data-th="Group A" width="20%" scope="row">
+                                            <img style="width:60px; height:60px" src="@item.Team.SignedUrl" />
+                                            <span>@item.Team.Name</span>
+                                        </th>
+                                        <td data-th="Playered" width="10%" class="text-center">@item.PlayedCount</td>
+                                        <td data-th="Won" width="10%" class="text-center">@item.WinCount</td>
+                                        <td data-th="Draw" width="10%" class="text-center">@item.DrawCount</td>
+                                        <td data-th="Lost" width="10%" class="text-center">@item.LoseCount</td>
+                                        <td data-th="For" width="10%" class="text-center">@item.GoalsFor</td>
+                                        <td data-th="Against" width="10%" class="text-center">@item.GoalsAgainst</td>
+                                        <td data-th="Goal dif." width="10%" class="text-center">@item.Average</td>
+                                        <td data-th="Points" width="10%" class="text-center">@item.Points</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@model EntityLayer.Concrete.Team
+@{
+    ViewData["Title"] = "AddTeam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" enctype="multipart/form-data">
+
+    <label>Klup Fotosu</label>
+    <input type="file" class="form-control border" name="Photo" />
+    <br />
+
+    <input name="SavedUrl" type="hidden" class="form-control" />
+    <input name="SavedFileName" type="hidden" class="form-control" />
+    <label>Kulüp Adı</label>
+    <input type="text" class="form-control border" name="Name" />
+    <br />
+
+    <label for="coachSelect">Teknik Direktör Seç:</label>
+    <select id="coachSelect" name="CoachID" class="form-control">
+
+        <option value="">Seçer misin ki lütfen? </option>
+        @foreach (var item in ViewBag.CoachList)
+        {
+            <option value="@item.CoachID">@item.Name</option>
+        }
+    </select>
+    <br />
+    <label for="StadiumSelect">Stadyum Seç:</label>
+    <select id="StadiumSelect" name="StadiumID" class="form-control">
+
+        <option value="">Stadyum Seç</option>
+        @foreach (var item in ViewBag.StadiumList)
+        {
+            <option value="@item.StadiumID">@item.Name</option>
+        }
+    </select>
+    <br />
+    <button type="submit" class="btn btn-info">Kulübü Kaydet</button>
+</form>
+
+<script>
+    function submitForm() {
+        var selectedCoachID = document.getElementById('coachSelect').value;
+        document.getElementsByName('selectedCoach')[0].value = selectedCoachID;
+    }
+</script>

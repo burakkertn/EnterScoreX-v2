@@ -1,0 +1,37 @@
+﻿@model List<EntityLayer.Concrete.Contact>
+
+<div class="contact-info-section">
+    @foreach (var item in Model)
+    {
+          <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="info-items">
+                    <i class="fa fa-envelope"></i>
+                    <h4>Mail Adresimiz</h4>
+                    <p>@item.EMail</p>
+                   
+                </div>
+            </div><!-- END OF /. COL -->
+            <div class="col-md-4">
+                <div class="info-items">
+                    <i class="fa fa-phone"></i>
+                    <h4>Telefon Numaramız</h4>
+                    <p>@item.PhoneNumber</p>
+                
+                </div>
+            </div><!-- END OF /. COL -->
+            <div class="col-md-4">
+                <div class="info-items">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <h4>Adresimiz <i class="fa fa-arrow-circle-down" aria-hidden="true"></i></h4>
+                    <p>@item.Address</p>
+                  
+                </div>
+            </div><!-- END OF /. COL -->
+        </div>
+       
+    </div>
+    }
+  
+</div>

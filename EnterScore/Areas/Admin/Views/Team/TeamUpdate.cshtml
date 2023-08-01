@@ -1,0 +1,54 @@
+﻿@model EntityLayer.Concrete.Team
+@{
+    ViewData["Title"] = "AddTeam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<h1>Kulüp Güncelleme</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" name="TeamID" value="@Model.TeamID" />
+
+    <label>Takım Fotosu</label>
+    <input type="file" class="form-control border" name="Photo" />
+    <br />
+    @if (!String.IsNullOrWhiteSpace(Model.SignedUrl))
+    {
+        <div class="md-col-2">
+            @Html.DisplayNameFor(model => model.Photo)
+        </div>
+        <div cite="md-col-10">
+            <img src="@Model.SignedUrl" class="figure-img img-fluid rounded" alt="@Model.SavedFileName">
+        </div>
+    }
+    <input name="SavedUrl" type="hidden" class="form-control" />
+    <input name="SavedFileName" type="hidden" class="form-control" />
+
+    <label>Kulüp Adı</label>
+    <input type="text" class="form-control border" name="Name" value="@Model.Name" />
+    <br />
+
+
+    <select id="coachSelect" name="CoachID" class="form-control">
+        <option value="">Teknik Direktör Seç? </option>
+        @foreach (var item in ViewBag.CoachList)
+        {
+            <option value="@item.CoachID" @(item.CoachID == Model.CoachID ? "selected" : "")>@item.Name</option>
+        }
+    </select>
+    <br />
+    <select id="stadiumSelect" name="StadiumID" class="form-control">
+        <option value="">Stadyum Seç? </option>
+        @foreach (var item in ViewBag.StadiumList)
+        {
+            <option value="@item.StadiumID" @(item.StadiumID == Model.StadiumID ? "selected" : "")>@item.Name</option>
+        }
+    </select>
+    <br />
+    <button class="btn btn-outline-info">Kulübü Güncelle</button>
+    <a href="/Admin/Team" class="btn btn-outline-danger">Geri Dön</a>
+
+</form>
