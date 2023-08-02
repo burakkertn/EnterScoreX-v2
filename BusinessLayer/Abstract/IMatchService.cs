@@ -13,5 +13,6 @@ namespace BusinessLayer.Abstract
         public List<Match> TGetMatchWithAllDetails();
         public Match TGetMatchWithTeamByID(int MatchID);
         public Match TGetMatchWithAllDetailsByID(int MatchID);
+
     }
 }

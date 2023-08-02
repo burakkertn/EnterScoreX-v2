@@ -54,5 +54,7 @@ namespace BusinessLayer.Concrete
         {
             _matchDal.Update(t);
         }
+
+      
     }
 }
