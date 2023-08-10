@@ -17,7 +17,7 @@
             <div class="col-md-4 col-sm-12 col-xs-12">
                 <div class="match-left d-flex align-items-center">
                     <div class="today-team-img teamsname">
-                        <a href="/TeamDetails/Index/@Model.HomeTeam.TeamID"><img src="@Model.HomeTeam.SignedUrl" width="90" height="90"></a>
+                        <a href="/TeamDetails/Index/@Model.HomeTeam.TeamID"><img src="@Model.HomeTeam.SignedUrl" style="width:50px;height:50px"></a>
                     </div>
                     <div class="today-team-name teamsname">
                         <a href="/TeamDetails/Index/@Model.HomeTeam.TeamID">
@@ -66,15 +66,15 @@
                                 var player = players.FirstOrDefault(p => p.PlayerID == item.PlayerID);
                                 if (player.TeamID == Model.AwayTeam.TeamID)
                                 {
-                                    <span class="goal-time">@item.GoalTime'</span>
-                                    <span class="player-name">@player.Name</span>
+                                    <span class="goal-time white-text bigger-text">@item.GoalTime'</span>
+                                    <span class="player-name white-text bigger-text">@player.Name</span>
                                     <br />
                                 }
                             }
                         }
                     </div>
                     <div class="today-team-img teamsname">
-                        <a href="/TeamDetails/Index/@Model.AwayTeam.TeamID"><img src="@Model.AwayTeam.SignedUrl" width="90" height="90" /></a>
+                        <a href="/TeamDetails/Index/@Model.AwayTeam.TeamID"><img src="@Model.AwayTeam.SignedUrl" style="width:50px;height:50px"/></a>
                     </div>
                 </div>
             </div>
