@@ -171,11 +171,12 @@
                                                 {
                                                     <div class="item">
                                                         <div class="teams-image">
-                                                            <img src="@item.Player.SignedUrl" class="img-responsive" />
+                                                            <img src="@item.Player.SignedUrl" class="img-responsive" style="width:422px; height:591px" />
                                                         </div>
                                                         <div class="teams-description">
                                                             <p><span class="title">Uyruk : </span>@item.Player.Nationality</p>
-                                                            <p><span class="title">Doğum Tarihi : </span>@item.Player.BirthDate</p>
+
+                                                            <p><span class="title">Doğum Tarihi : @(((DateTime)item.Player.BirthDate).ToString("dd-MM-yyyy")) </span></p>
                                                             <p><span class="title">Boy : </span>@item.Player.Height cm</p>
                                                             <p><span class="title">Kilo : </span>@item.Player.Weight kg</p>
                                                             <p><span class="title">Gol : </span>@item.GoalScore</p>
