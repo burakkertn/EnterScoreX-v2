@@ -5978,12 +5978,12 @@ textarea.form-control {
     float: left;
 }
 
-.today-team-img {
-    background: #fff;
-    padding: 20px;
+
+.today-team-img.teamsname img {
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
 }
-
 .today-team-name {
     margin-top: 10px;
 }
@@ -6769,8 +6769,8 @@ textarea.form-control {
 
 .club-histry-feature-section {
     padding: 53px 0 0 0;
+    
 }
-
 .inner-container {
     border-bottom: 2px solid #fec722;
     display: block;
@@ -7358,4 +7358,11 @@ table.point-items-more span {
     color: #333;
     font-weight: bold; /* Takım yazısını koyu yap */
     margin-top: -10px; /* Adjust the negative margin value to your preference */
+}
+.white-text {
+    color: white;
+}
+
+.bigger-text {
+    font-size: 15px; /* İstediğiniz boyutu buradan belirleyebilirsiniz */
 }

@@ -491,10 +491,10 @@ namespace DataAccessLayer.Migrations
                     b.Property<int?>("DrawCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("GoalsAgainst")
+                    b.Property<int?>("GoalsAgainst")
                         .HasColumnType("int");
 
-                    b.Property<int>("GoalsFor")
+                    b.Property<int?>("GoalsFor")
                         .HasColumnType("int");
 
                     b.Property<int?>("LoseCount")
@@ -503,7 +503,7 @@ namespace DataAccessLayer.Migrations
                     b.Property<int?>("PlayedCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("Points")
+                    b.Property<int?>("Points")
                         .HasColumnType("int");
 
                     b.Property<int>("TeamID")
@@ -621,7 +621,7 @@ namespace DataAccessLayer.Migrations
                         .IsRequired();
 
                     b.HasOne("EntityLayer.Concrete.Team", "Team")
-                        .WithMany()
+                        .WithMany("Players")
                         .HasForeignKey("TeamID");
 
                     b.Navigation("Position");
@@ -662,7 +662,7 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.TeamStatistic", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.Team", "Team")
-                        .WithMany()
+                        .WithMany("Statistics")
                         .HasForeignKey("TeamID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -693,6 +693,10 @@ namespace DataAccessLayer.Migrations
                     b.Navigation("HomesMatches");
 
                     b.Navigation("HomesResult");
+
+                    b.Navigation("Players");
+
+                    b.Navigation("Statistics");
                 });
 #pragma warning restore 612, 618
         }

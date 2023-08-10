@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(EnterScoreXContext))]
-    [Migration("20230730084005_mig12")]
-    partial class mig12
+    [Migration("20230804075353_mig1")]
+    partial class mig1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -623,7 +623,7 @@ namespace DataAccessLayer.Migrations
                         .IsRequired();
 
                     b.HasOne("EntityLayer.Concrete.Team", "Team")
-                        .WithMany()
+                        .WithMany("Players")
                         .HasForeignKey("TeamID");
 
                     b.Navigation("Position");
@@ -664,7 +664,7 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.TeamStatistic", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.Team", "Team")
-                        .WithMany()
+                        .WithMany("Statistics")
                         .HasForeignKey("TeamID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -695,6 +695,10 @@ namespace DataAccessLayer.Migrations
                     b.Navigation("HomesMatches");
 
                     b.Navigation("HomesResult");
+
+                    b.Navigation("Players");
+
+                    b.Navigation("Statistics");
                 });
 #pragma warning restore 612, 618
         }

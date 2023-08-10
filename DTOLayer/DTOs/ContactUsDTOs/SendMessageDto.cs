@@ -8,6 +8,7 @@ namespace DTOLayer.DTOs.ContactUsDTOs
 {
     public class SendMessageDto
     {
+
         public string Name { get; set; }
         public string Mail { get; set; }
         public string SubjectTitle { get; set; }

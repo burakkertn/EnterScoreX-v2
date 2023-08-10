@@ -2,6 +2,9 @@ using DataAccessLayer.Context;
 using BusinessLayer.Container;
 using EnterScore.Utils.ConfigOptions;
 using EnterScore.Services;
+using FluentValidation;
+using BusinessLayer.ValidationRules.ContactUs;
+using DTOLayer.DTOs.ContactUsDTOs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +17,8 @@ builder.Services.AddSingleton<ICloudStorageService, CloudStorageService>();
 
 builder.Services.AddDbContext<EnterScoreXContext>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddMvc();
+builder.Services.AddScoped<IValidator<SendMessageDto>, SendContactUsValidator>();
 
 
 var app = builder.Build();
@@ -34,7 +39,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Fixture}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "Areas",

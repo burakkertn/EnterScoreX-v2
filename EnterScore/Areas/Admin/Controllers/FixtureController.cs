@@ -92,7 +92,7 @@ namespace EnterScore.Areas.Admin.Controllers
                     fixture.HomeTeamID = previousSeasonFixtures[fixtureIndex].AwayTeamID;
                     fixture.AwayTeamID = previousSeasonFixtures[fixtureIndex].HomeTeamID;
                     fixture.WeekCompleted = false;
-                    fixture.SeasonID = 2;
+                    fixture.SeasonID = 3;
                     fixture.FixtureID = 0; // table 'Fixtures' when IDENTITY_INSERT is set to OFF.
                     _fixtureService.TInsert(fixture);
                     fixtureIndex++;
