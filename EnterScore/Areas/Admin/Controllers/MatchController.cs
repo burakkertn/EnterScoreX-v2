@@ -58,7 +58,7 @@ namespace EnterScore.Areas.Admin.Controllers
                     return fixture.Week;
                 }
             }
-            return -1; // Tüm haftalar oynanmışsa -1  döndürcem
+            return -1; 
         }
 
         private void GoalSave(int goalCount, int forTeamID, int againstTeamID, int matchID)
